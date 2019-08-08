@@ -16,4 +16,21 @@ import React from 'react';
   стиль 'background: red'
 */
 
-//export const withRedBackground
+const withRedBackground = WrappedComponent => {
+  return class Enhancer extends WrappedComponent {
+    render() {
+      let renderTree = super.render();
+
+      if (renderTree.type === 'button') {
+        renderTree = {
+          ...renderTree,
+          props: { ...renderTree.props, style: { background: 'red' } }
+        };
+      }
+
+      return renderTree;
+    }
+  };
+};
+
+export { withRedBackground };

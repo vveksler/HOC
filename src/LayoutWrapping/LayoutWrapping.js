@@ -5,4 +5,14 @@ import React, { Component } from 'react';
   со стилем 'position: absolute'
 */
 
-export const wrapWithAbsolutePosition = () => {}
+export const wrapWithAbsolutePosition = WrappedComponent => {
+  return class WrapWithAbsolutePosition extends Component {
+    render() {
+      return (
+        <div style={{ position: 'absolute' }}>
+          <WrappedComponent />
+        </div>
+      );
+    }
+  };
+};
