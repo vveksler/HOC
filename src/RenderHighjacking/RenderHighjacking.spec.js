@@ -10,7 +10,7 @@ afterEach(cleanup)
 
 //Уберите .skip чтобы начать выполнять тест
 
-describe.skip('withRedBackground', () => {
+describe('withRedBackground', () => {
   it('overrides user prop', () => {
     class MockClassComponent extends Component {
         render() {
